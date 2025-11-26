@@ -87,7 +87,7 @@ const ProfileSidebar = () => {
   };
 
   return (
-    <aside className="w-64 flex-shrink-0 border-r border-gray-800 h-full overflow-hidden bg-black relative">
+    <aside className="w-64 flex-shrink-0 border-r border-purple-200 h-full overflow-hidden bg-white relative">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -107,14 +107,14 @@ const ProfileSidebar = () => {
             />
             <motion.div
               className="absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: 'linear-gradient(to top right, rgba(237, 237, 168, 0.2), transparent, rgba(237, 237, 168, 0.2))' }}
+              style={{ background: 'linear-gradient(to top right, rgba(147, 51, 234, 0.2), transparent, rgba(168, 85, 247, 0.2))' }}
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
             <motion.div
               className="absolute inset-0 rounded-full border-2 pointer-events-none"
-              style={{ borderColor: 'rgba(237, 237, 168, 0.5)' }}
+              style={{ borderColor: 'rgba(147, 51, 234, 0.5)' }}
               initial={{ opacity: 0, scale: 1 }}
               whileHover={{ opacity: 1, scale: 1.1 }}
               transition={{ duration: 0.3 }}
@@ -152,31 +152,31 @@ const ProfileSidebar = () => {
 
         {/* Name and Role */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-100 mb-1">Sriya Mukkawar</h2>
-          <p className="text-gray-400">Full Stack Developer</p>
+          <h2 className="text-2xl font-bold text-black mb-1">Sriya Mukkawar</h2>
+          <p className="text-gray-600">Full Stack Developer</p>
         </div>
 
         {/* Bio */}
-        <p className="text-gray-300 text-sm mb-8 text-center">
+        <p className="text-black text-sm mb-8 text-center">
           I'm a passionate full stack developer focused on creating clean, efficient, and scalable solutions.
         </p>
 
         {/* Details */}
         <div className="space-y-4 mb-8">
-          <div className="flex items-center gap-3 text-gray-300 text-sm">
-            <Briefcase className="w-4 h-4 text-gray-500" />
+          <div className="flex items-center gap-3 text-black text-sm">
+            <Briefcase className="w-4 h-4 text-purple-600" />
             <span>Full Stack Developer</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-300 text-sm">
-            <MapPin className="w-4 h-4 text-gray-500" />
+          <div className="flex items-center gap-3 text-black text-sm">
+            <MapPin className="w-4 h-4 text-purple-600" />
             <span>21n, Hyderabad</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-300 text-sm">
-            <Languages className="w-4 h-4 text-gray-500" />
+          <div className="flex items-center gap-3 text-black text-sm">
+            <Languages className="w-4 h-4 text-purple-600" />
             <span>English, Hindi, Telugu</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-300 text-sm">
-            <Mail className="w-4 h-4 text-gray-500" />
+          <div className="flex items-center gap-3 text-black text-sm">
+            <Mail className="w-4 h-4 text-purple-600" />
             <span>Available for opportunities</span>
           </div>
         </div>
@@ -187,21 +187,24 @@ const ProfileSidebar = () => {
       
       {/* Buttons - positioned at absolute bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-8 pt-0">
-        <div className="border-t border-gray-800 pt-4 w-full">
+        <div className="border-t border-purple-200 pt-4 w-full">
           <div className="space-y-3">
           {buttonConfigs.map((config) => {
             const Icon = config.icon;
             const isHovered = hoveredButton === config.id;
             
             return (
-              <button
+              <a
                 key={config.id}
+                href={config.id === 'download' ? 'https://drive.google.com/file/d/1auTY7m0-YvVTp4fjOYxBpvw4OdWM4aBt/view?usp=sharing' : config.id === 'work' ? 'mailto:mukkawarsriya@gmail.com' : '#'}
+                target={config.id === 'download' ? '_blank' : undefined}
+                rel={config.id === 'download' ? 'noopener noreferrer' : undefined}
                 onMouseEnter={() => handleMouseEnter(config.id, config.defaultText)}
                 onMouseLeave={() => handleMouseLeave(config.id)}
-                className={`w-full flex items-center justify-center gap-2 px-4 py-3 ${config.className} rounded-lg transition text-sm font-medium relative overflow-hidden ${
+                className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg transition text-sm font-medium relative overflow-hidden ${
                   config.id === 'download' || config.id === 'work' 
-                    ? 'hover:bg-gray-700' 
-                    : 'hover:bg-gray-100'
+                    ? 'bg-purple-100 text-purple-800 hover:bg-purple-200 border border-purple-300' 
+                    : 'bg-purple-800 text-white hover:bg-purple-900'
                 }`}
               >
                 <span className={`absolute inset-0 flex items-center justify-center gap-2 transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
@@ -212,7 +215,7 @@ const ProfileSidebar = () => {
                   <Icon className="w-4 h-4" />
                   {scrambledText[config.id] || config.defaultText}
                 </span>
-              </button>
+              </a>
             );
           })}
           </div>

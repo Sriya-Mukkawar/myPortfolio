@@ -34,7 +34,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-200 mb-4">Let's Work Together</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Let's Work Together</h2>
         </motion.div>
 
         <motion.form
@@ -43,13 +43,12 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="rounded-2xl p-8 md:p-12 border border-gray-800"
-          style={{ backgroundColor: '#1C1C04' }}
+          className="rounded-2xl p-8 md:p-12 border border-purple-200 bg-purple-50"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-                First name <span className="text-red-500">*</span>
+              <label htmlFor="firstName" className="block text-sm font-medium text-black mb-2 font-mono">
+                First name <span className="text-purple-600">*</span>
               </label>
               <input
                 type="text"
@@ -58,15 +57,12 @@ const Contact = () => {
                 required
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-700 text-gray-200 rounded-lg focus:ring-2 focus:border-transparent outline-none transition"
-                style={{ backgroundColor: '#1C1C04', '--tw-ring-color': '#EDEDA8' } as React.CSSProperties}
-                onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #EDEDA8'}
-                onBlur={(e) => e.currentTarget.style.boxShadow = ''}
+                className="w-full px-4 py-3 border border-purple-300 text-black bg-white rounded-lg focus:ring-2 focus:border-purple-500 focus:ring-purple-500 outline-none transition"
               />
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-                Last name <span className="text-red-500">*</span>
+              <label htmlFor="lastName" className="block text-sm font-medium text-black mb-2 font-mono">
+                Last name <span className="text-purple-600">*</span>
               </label>
               <input
                 type="text"
@@ -75,16 +71,13 @@ const Contact = () => {
                 required
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-700 text-gray-200 rounded-lg focus:ring-2 focus:border-transparent outline-none transition"
-                style={{ backgroundColor: '#1C1C04', '--tw-ring-color': '#EDEDA8' } as React.CSSProperties}
-                onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #EDEDA8'}
-                onBlur={(e) => e.currentTarget.style.boxShadow = ''}
+                className="w-full px-4 py-3 border border-purple-300 text-black bg-white rounded-lg focus:ring-2 focus:border-purple-500 focus:ring-purple-500 outline-none transition"
               />
             </div>
           </div>
           <div className="mb-6">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-              Email address <span className="text-red-500">*</span>
+            <label htmlFor="email" className="block text-sm font-medium text-black mb-2 font-mono">
+              Email address <span className="text-purple-600">*</span>
             </label>
             <input
               type="email"
@@ -93,15 +86,12 @@ const Contact = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 text-gray-200 rounded-lg focus:ring-2 focus:border-transparent outline-none transition"
-              style={{ backgroundColor: '#1C1C04', '--tw-ring-color': '#EDEDA8' } as React.CSSProperties}
-              onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #EDEDA8'}
-              onBlur={(e) => e.currentTarget.style.boxShadow = ''}
+              className="w-full px-4 py-3 border border-purple-300 text-black bg-white rounded-lg focus:ring-2 focus:border-purple-500 focus:ring-purple-500 outline-none transition"
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-              Subject <span className="text-red-500">*</span>
+            <label htmlFor="subject" className="block text-sm font-medium text-black mb-2 font-mono">
+              Subject <span className="text-purple-600">*</span>
             </label>
             <input
               type="text"
@@ -110,15 +100,12 @@ const Contact = () => {
               required
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 text-gray-200 rounded-lg focus:ring-2 focus:border-transparent outline-none transition"
-              style={{ backgroundColor: '#1C1C04', '--tw-ring-color': '#EDEDA8' } as React.CSSProperties}
-              onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #EDEDA8'}
-              onBlur={(e) => e.currentTarget.style.boxShadow = ''}
+              className="w-full px-4 py-3 border border-purple-300 text-black bg-white rounded-lg focus:ring-2 focus:border-purple-500 focus:ring-purple-500 outline-none transition"
             />
           </div>
           <div className="mb-8">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-              Message <span className="text-red-500">*</span>
+            <label htmlFor="message" className="block text-sm font-medium text-black mb-2 font-mono">
+              Message <span className="text-purple-600">*</span>
             </label>
             <textarea
               id="message"
@@ -127,18 +114,12 @@ const Contact = () => {
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-700 text-gray-200 rounded-lg focus:ring-2 focus:border-transparent outline-none transition resize-none"
-              style={{ backgroundColor: '#1C1C04', '--tw-ring-color': '#EDEDA8' } as React.CSSProperties}
-              onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #EDEDA8'}
-              onBlur={(e) => e.currentTarget.style.boxShadow = ''}
+              className="w-full px-4 py-3 border border-purple-300 text-black bg-white rounded-lg focus:ring-2 focus:border-purple-500 focus:ring-purple-500 outline-none transition resize-none"
             />
           </div>
           <button
             type="submit"
-            className="w-full md:w-auto px-8 py-3 text-gray-200 rounded-lg transition flex items-center justify-center gap-2"
-            style={{ backgroundColor: '#1C1C04' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(28, 28, 4, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C1C04'}
+            className="w-full md:w-auto px-8 py-3 bg-purple-800 text-white rounded-lg transition flex items-center justify-center gap-2 hover:bg-purple-900 font-mono"
           >
             <Send className="w-4 h-4" />
             Send message

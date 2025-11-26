@@ -26,7 +26,7 @@ const TechStack = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-200 mb-4">My Tech Stack</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">My Tech Stack</h2>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -37,21 +37,19 @@ const TechStack = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-xl p-6 text-center border border-gray-800 hover:border-gray-700 transition-colors"
-              style={{ backgroundColor: '#1C1C04' }}
+              className="rounded-xl p-6 text-center border border-purple-200 hover:border-purple-300 transition-colors bg-purple-50"
             >
-              <div className="text-2xl font-bold text-gray-200 mb-2">{tech.name}</div>
-              <div className="w-full bg-gray-800 rounded-full h-2 mb-2">
+              <div className="text-2xl font-bold text-black mb-2 font-mono">{tech.name}</div>
+              <div className="w-full bg-purple-200 rounded-full h-2 mb-2">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${tech.percentage}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: index * 0.05 }}
-                  className="h-2 rounded-full"
-                  style={{ backgroundColor: '#EDEDA8' }}
+                  className="h-2 rounded-full bg-purple-600"
                 />
               </div>
-              <div className="text-sm font-semibold text-gray-400">{tech.percentage}%</div>
+              <div className="text-sm font-semibold text-gray-600 font-mono">{tech.percentage}%</div>
             </motion.div>
           ))}
         </div>

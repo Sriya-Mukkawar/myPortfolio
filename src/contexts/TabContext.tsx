@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 
-type TabType = 'sriya.info' | 'work.done' | 'blog.share';
+type TabType = 'sriya.info' | 'work.done' | 'blog.share' | 'type.fun';
 
 interface TabContextType {
   activeTab: TabType;

@@ -9,6 +9,7 @@ import Testimonials from './Testimonials';
 import Blog from './Blog';
 import Contact from './Contact';
 import PixelatedReveal from './PixelatedReveal';
+import FunShare from './FunShare';
 
 const projects = [
   {
@@ -31,17 +32,17 @@ const MainContent = () => {
   const { activeTab } = useTab();
   
   // Calculate approximate line count for line numbers - matches actual content length
-  const totalLines = activeTab === 'sriya.info' ? 318 : activeTab === 'work.done' ? 50 : 30;
+  const totalLines = activeTab === 'sriya.info' ? 318 : activeTab === 'work.done' ? 50 : activeTab === 'blog.share' ? 30 : activeTab === 'type.fun' ? 100 : 30;
 
   return (
-    <main className="flex-1 min-w-0 relative">
+    <main className="flex-1 min-w-0 relative bg-white">
       {/* Line Numbers Container - extends from top to bottom */}
-      <div className="fixed left-64 top-8 bottom-8 w-10 z-10" style={{ backgroundColor: '#1C1C04' }}>
+      <div className="fixed left-64 top-8 bottom-8 w-10 z-10 bg-white">
         {/* Left border line */}
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-800"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-purple-200"></div>
         {/* Right border line */}
-        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-800"></div>
-        <div className="text-xs font-mono pt-4 pb-4 space-y-1 h-full overflow-y-auto" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+        <div className="absolute right-0 top-0 bottom-0 w-px bg-purple-200"></div>
+        <div className="text-xs font-mono pt-4 pb-4 space-y-1 h-full overflow-y-auto" style={{ color: '#c084fc' }}>
           {Array.from({ length: totalLines }, (_, i) => (
             <div key={i} className="text-right pr-2">
               {i + 1}
@@ -50,22 +51,22 @@ const MainContent = () => {
         </div>
       </div>
 
-          <div className="pl-14 pr-8 pt-4 pb-8">
+          <div className="pl-14 pr-8 pt-4 pb-8 bg-white">
         {activeTab === 'sriya.info' && (
           <>
             {/* Hero Section */}
             <section id="home" className="mb-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Hero section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Hero section */</div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <h1 className="text-6xl font-bold mb-6">
-                  <span className="text-white">Creative Full Stack</span>{' '}
-                  <span className="text-gray-300">Developer</span>
+                  <span className="text-black">Creative Full Stack</span>{' '}
+                  <span className="text-black">Developer</span>
                 </h1>
-                <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
+                <p className="text-black text-lg leading-relaxed max-w-2xl">
                   As a user-centric developer, I create visually refined, highly functional digital experiences
                   that transform ideas into meaningful interactions.
                 </p>
@@ -74,37 +75,37 @@ const MainContent = () => {
 
             {/* Experience Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Experience section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Experience section */</div>
               <Experience />
             </div>
 
             {/* About Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* About section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* About section */</div>
               <About />
             </div>
 
             {/* Services Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Services section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Services section */</div>
               <Services />
             </div>
 
             {/* Tech Stack Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Tech stack section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Tech stack section */</div>
               <TechStack />
             </div>
 
             {/* Testimonials Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Testimonials section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Testimonials section */</div>
               <Testimonials />
             </div>
 
             {/* Contact Section */}
             <div className="mb-16 pt-16">
-              <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Contact section */</div>
+              <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Contact section */</div>
               <Contact />
             </div>
           </>
@@ -113,10 +114,10 @@ const MainContent = () => {
         {activeTab === 'work.done' && (
           <section id="work" className="mb-16">
             <div className="flex items-center justify-between mb-6">
-              <div className="text-xs italic" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Featured work */</div>
+              <div className="text-xs italic font-mono" style={{ color: '#c084fc' }}>/* Featured work */</div>
               <div className="flex gap-2">
-                <button className="w-6 h-6 border border-gray-700 rounded hover:bg-gray-800 transition"></button>
-                <button className="w-6 h-6 border border-gray-700 rounded hover:bg-gray-800 transition"></button>
+                <button className="w-6 h-6 border border-purple-300 rounded hover:bg-purple-100 transition"></button>
+                <button className="w-6 h-6 border border-purple-300 rounded hover:bg-purple-100 transition"></button>
               </div>
             </div>
 
@@ -128,18 +129,18 @@ const MainContent = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group cursor-pointer"
+                  className="group"
                 >
                   <div className="mb-3 flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-gray-200 group-hover:text-white transition">
+                    <h3 className="text-lg font-bold text-black group-hover:text-gray-800 transition">
                       {project.title}
                     </h3>
-                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition" />
+                    <ArrowRight className="w-4 h-4 text-purple-600 group-hover:text-purple-800 transition" />
                   </div>
-                  <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden mb-2 relative group/image">
+                  <div className="aspect-video bg-purple-50 rounded-lg overflow-hidden mb-2 relative group/image border border-purple-200">
                     <PixelatedReveal image={project.image} hoverImage={project.hoverImage} alt={project.title} gridSize={25} />
                   </div>
-                  <p className="text-xs text-gray-500">Delivered 2 projects, tackled multiple challenges</p>
+                  <p className="text-xs text-gray-600">Delivered 2 projects, tackled multiple challenges</p>
                 </motion.div>
               ))}
             </div>
@@ -148,8 +149,15 @@ const MainContent = () => {
 
         {activeTab === 'blog.share' && (
           <div className="mb-16 pt-16">
-            <div className="text-xs italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>/* Blog section */</div>
+            <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Blog section */</div>
             <Blog />
+          </div>
+        )}
+
+        {activeTab === 'type.fun' && (
+          <div className="mb-16 pt-16">
+            <div className="text-xs italic mb-4 font-mono" style={{ color: '#c084fc' }}>/* Fun share section */</div>
+            <FunShare />
           </div>
         )}
         </div>

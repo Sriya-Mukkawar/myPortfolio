@@ -13,7 +13,7 @@ const Blog = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-200 mb-4">From My Development Desk</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">From My Development Desk</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -25,8 +25,7 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors cursor-pointer group block"
-            style={{ backgroundColor: '#1C1C04' }}
+            className="rounded-xl overflow-hidden border border-purple-200 hover:border-purple-300 transition-colors group block bg-purple-50"
           >
             <img
               src={blogsImage}
@@ -43,8 +42,7 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-colors cursor-pointer group block"
-            style={{ backgroundColor: '#1C1C04' }}
+            className="rounded-xl overflow-hidden border border-purple-200 hover:border-purple-300 transition-colors group block bg-purple-50"
           >
             <img
               src={casualThoughtsImage}

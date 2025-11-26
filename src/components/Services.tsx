@@ -47,7 +47,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-200 mb-4">What I Do</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">What I Do</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -58,14 +58,13 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="rounded-xl p-8 border border-gray-800 hover:border-gray-700 transition-colors"
-              style={{ backgroundColor: '#1C1C04' }}
+              className="rounded-xl p-8 border border-purple-200 hover:border-purple-300 transition-colors bg-purple-50"
             >
-              <h3 className="text-xl font-bold text-gray-200 mb-6">{service.title}</h3>
+              <h3 className="text-xl font-bold text-black mb-6 font-mono">{service.title}</h3>
               <ul className="space-y-3">
                 {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-2 text-gray-300">
-                    <span className="mt-1" style={{ color: '#EDEDA8' }}>•</span>
+                  <li key={itemIndex} className="flex items-start gap-2 text-black">
+                    <span className="mt-1 text-purple-600 font-mono">→</span>
                     <span>{item}</span>
                   </li>
                 ))}
