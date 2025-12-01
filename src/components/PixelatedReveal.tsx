@@ -104,7 +104,7 @@ const PixelatedReveal = ({ image, hoverImage, alt, gridSize = 20 }: PixelatedRev
                 backgroundPosition: `${(col / (gridSize - 1)) * 100}% ${(row / (gridSize - 1)) * 100}%`,
                 imageRendering: 'pixelated',
                 filter: 'blur(1px) contrast(1.3)',
-                backgroundColor: '#faf5ff',
+                backgroundColor: '#eff6ff',
               }}
             />
           );

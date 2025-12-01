@@ -159,16 +159,16 @@ const FunShare = () => {
         transition={{ duration: 0.6 }}
         className="mb-8"
       >
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-2">Create & Share Files</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">Create & Share Files</h2>
+            <p className="text-sm md:text-base text-gray-600">
               Create random files with .fun extension, write content, and save them. Files are stored locally in your browser.
             </p>
           </div>
           <button
             onClick={createNewFile}
-            className="flex items-center gap-2 px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition font-mono"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition font-mono w-full sm:w-auto"
           >
             <Plus className="w-5 h-5" />
             New File
@@ -179,12 +179,12 @@ const FunShare = () => {
       {/* File Cards Grid */}
       {selectedFile ? (
         <div className="mb-6">
-          <div className="border border-purple-200 rounded-lg bg-white h-full flex flex-col shadow-sm">
+          <div className="border border-blue-200 rounded-lg bg-white h-full flex flex-col shadow-sm">
             {/* Editor Header */}
-            <div className="border-b border-purple-200 p-4 bg-purple-50 rounded-t-lg">
-              <div className="flex items-center justify-between mb-2">
+            <div className="border-b border-blue-200 p-4 bg-blue-50 rounded-t-lg">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                 {isEditingName ? (
-                  <div className="flex items-center gap-2 flex-1">
+                  <div className="flex items-center gap-2 flex-1 w-full">
                     <input
                       type="text"
                       value={editingName}
@@ -197,15 +197,15 @@ const FunShare = () => {
                           setEditingName(selectedFile.name);
                         }
                       }}
-                      className="flex-1 px-3 py-2 border border-purple-300 rounded font-mono text-sm bg-white"
+                      className="flex-1 px-3 py-2 border border-blue-300 rounded font-mono text-sm bg-white"
                       autoFocus
                     />
                   </div>
                 ) : (
-                  <div className="flex items-center gap-2 flex-1">
-                    <FileText className="w-5 h-5 text-purple-600" />
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
+                    <FileText className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <h3
-                      className="font-mono text-base font-semibold text-black cursor-pointer hover:text-purple-600 transition"
+                      className="font-mono text-sm sm:text-base font-semibold text-black cursor-pointer hover:text-blue-600 transition truncate"
                       onDoubleClick={() => {
                         setEditingName(selectedFile.name);
                         setIsEditingName(true);
@@ -213,18 +213,19 @@ const FunShare = () => {
                     >
                       {selectedFile.name}
                     </h3>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-gray-500 hidden sm:inline">
                       (Double-click to rename)
                     </span>
                   </div>
                 )}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-shrink-0">
                   <button
                     onClick={saveAndClose}
-                    className="flex items-center gap-2 px-4 py-2 bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition text-sm font-mono"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition text-sm font-mono"
                   >
                     <Save className="w-4 h-4" />
-                    Save & Close
+                    <span className="hidden sm:inline">Save & Close</span>
+                    <span className="sm:hidden">Save</span>
                   </button>
                   <button
                     onClick={closeEditor}
@@ -235,9 +236,10 @@ const FunShare = () => {
                   </button>
                 </div>
               </div>
-              <div className="text-xs text-gray-500 font-mono">
-                Created: {formatDate(selectedFile.createdAt)} • 
-                Last modified: {formatDate(selectedFile.updatedAt)}
+              <div className="text-xs text-gray-500 font-mono break-words">
+                <span className="block sm:inline">Created: {formatDate(selectedFile.createdAt)}</span>
+                <span className="hidden sm:inline"> • </span>
+                <span className="block sm:inline">Last modified: {formatDate(selectedFile.updatedAt)}</span>
               </div>
             </div>
 
@@ -246,9 +248,8 @@ const FunShare = () => {
               <textarea
                 value={editingContent}
                 onChange={(e) => setEditingContent(e.target.value)}
-                className="w-full h-full font-mono text-sm text-black bg-transparent outline-none resize-none"
+                className="w-full h-full font-mono text-sm text-black bg-transparent outline-none resize-none min-h-[300px] md:min-h-[400px]"
                 placeholder="Start typing your content here..."
-                style={{ minHeight: '400px' }}
               />
             </div>
           </div>
@@ -259,16 +260,16 @@ const FunShare = () => {
       {!selectedFile && (
         <>
           {files.length === 0 ? (
-            <div className="border border-purple-200 rounded-lg bg-purple-50 p-12 flex items-center justify-center" style={{ minHeight: '400px' }}>
+            <div className="border border-blue-200 rounded-lg bg-blue-50 p-12 flex items-center justify-center" style={{ minHeight: '400px' }}>
               <div className="text-center">
-                <FileCode className="w-16 h-16 mx-auto mb-4 text-purple-400" />
+                <FileCode className="w-16 h-16 mx-auto mb-4 text-blue-400" />
                 <h3 className="text-xl font-bold text-black mb-2">No Files Yet</h3>
                 <p className="text-gray-600 mb-6">
                   Create your first .fun file to get started
                 </p>
                 <button
                   onClick={createNewFile}
-                  className="flex items-center gap-2 px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition mx-auto font-mono"
+                  className="flex items-center gap-2 px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition mx-auto font-mono"
                 >
                   <Plus className="w-5 h-5" />
                   Create New File
@@ -283,7 +284,7 @@ const FunShare = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="group relative border rounded-lg p-4 cursor-pointer transition-all duration-200 border-purple-200 bg-white hover:border-purple-400 hover:shadow-lg"
+                  className="group relative border rounded-lg p-4 cursor-pointer transition-all duration-200 border-blue-200 bg-white hover:border-blue-400 hover:shadow-lg"
                   onClick={() => selectFile(file)}
                 >
                   {/* Delete button */}
@@ -300,8 +301,8 @@ const FunShare = () => {
 
                   {/* File icon and name */}
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded bg-purple-100 flex items-center justify-center flex-shrink-0">
-                      <FileText className="w-5 h-5 text-purple-600" />
+                    <div className="w-10 h-10 rounded bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <FileText className="w-5 h-5 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-mono text-sm font-semibold text-black truncate">
@@ -318,11 +319,11 @@ const FunShare = () => {
                   </div>
 
                   {/* Footer with date */}
-                  <div className="flex items-center justify-between pt-3 border-t border-purple-100">
+                  <div className="flex items-center justify-between pt-3 border-t border-blue-100">
                     <span className="text-xs text-gray-500">
                       {formatDate(file.updatedAt)}
                     </span>
-                    <span className="text-xs text-purple-600 font-mono">.fun</span>
+                    <span className="text-xs text-blue-600 font-mono">.fun</span>
                   </div>
                 </motion.div>
               ))}
@@ -344,8 +345,8 @@ const FunShare = () => {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className={`group relative border rounded-lg p-4 cursor-pointer transition-all duration-200 ${
                   selectedFile?.id === file.id
-                    ? 'border-purple-500 bg-purple-50 shadow-md'
-                    : 'border-purple-200 bg-white hover:border-purple-400 hover:shadow-lg opacity-60 hover:opacity-100'
+                    ? 'border-blue-500 bg-blue-50 shadow-md'
+                    : 'border-blue-200 bg-white hover:border-blue-400 hover:shadow-lg opacity-60 hover:opacity-100'
                 }`}
                 onClick={() => selectFile(file)}
               >
@@ -363,8 +364,8 @@ const FunShare = () => {
 
                 {/* File icon and name */}
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded bg-purple-100 flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 rounded bg-blue-100 flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-blue-600" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-mono text-sm font-semibold text-black truncate">
@@ -381,11 +382,11 @@ const FunShare = () => {
                 </div>
 
                 {/* Footer with date */}
-                <div className="flex items-center justify-between pt-3 border-t border-purple-100">
+                <div className="flex items-center justify-between pt-3 border-t border-blue-100">
                   <span className="text-xs text-gray-500">
                     {formatDate(file.updatedAt)}
                   </span>
-                  <span className="text-xs text-purple-600 font-mono">.fun</span>
+                  <span className="text-xs text-blue-600 font-mono">.fun</span>
                 </div>
               </motion.div>
             ))}

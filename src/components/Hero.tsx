@@ -9,12 +9,12 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-left mb-8"
         >
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
             Creative Full Stack Developer
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl">
             As a user-centric developer, I create visually refined, highly functional digital experiences 
             that transform ideas into meaningful interactions.
           </p>
@@ -27,7 +27,7 @@ const Hero = () => {
           className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12"
         >
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-4xl font-bold">
               SM
             </div>
             <div className="flex-1 text-center md:text-left">

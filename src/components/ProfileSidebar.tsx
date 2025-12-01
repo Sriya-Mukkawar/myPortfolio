@@ -87,7 +87,7 @@ const ProfileSidebar = () => {
   };
 
   return (
-    <aside className="w-64 flex-shrink-0 border-r border-purple-200 h-full overflow-hidden bg-white relative">
+    <aside className="hidden lg:block w-64 flex-shrink-0 border-r border-blue-200 h-full overflow-hidden bg-white relative">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -107,14 +107,14 @@ const ProfileSidebar = () => {
             />
             <motion.div
               className="absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: 'linear-gradient(to top right, rgba(147, 51, 234, 0.2), transparent, rgba(168, 85, 247, 0.2))' }}
+              style={{ background: 'linear-gradient(to top right, rgba(30, 58, 138, 0.2), transparent, rgba(30, 64, 175, 0.2))' }}
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
             <motion.div
               className="absolute inset-0 rounded-full border-2 pointer-events-none"
-              style={{ borderColor: 'rgba(147, 51, 234, 0.5)' }}
+              style={{ borderColor: 'rgba(30, 58, 138, 0.5)' }}
               initial={{ opacity: 0, scale: 1 }}
               whileHover={{ opacity: 1, scale: 1.1 }}
               transition={{ duration: 0.3 }}
@@ -164,19 +164,19 @@ const ProfileSidebar = () => {
         {/* Details */}
         <div className="space-y-4 mb-8">
           <div className="flex items-center gap-3 text-black text-sm">
-            <Briefcase className="w-4 h-4 text-purple-600" />
+            <Briefcase className="w-4 h-4 text-blue-600" />
             <span>Full Stack Developer</span>
           </div>
           <div className="flex items-center gap-3 text-black text-sm">
-            <MapPin className="w-4 h-4 text-purple-600" />
+            <MapPin className="w-4 h-4 text-blue-600" />
             <span>21n, Hyderabad</span>
           </div>
           <div className="flex items-center gap-3 text-black text-sm">
-            <Languages className="w-4 h-4 text-purple-600" />
+            <Languages className="w-4 h-4 text-blue-600" />
             <span>English, Hindi, Telugu</span>
           </div>
           <div className="flex items-center gap-3 text-black text-sm">
-            <Mail className="w-4 h-4 text-purple-600" />
+            <Mail className="w-4 h-4 text-blue-600" />
             <span>Available for opportunities</span>
           </div>
         </div>
@@ -187,7 +187,7 @@ const ProfileSidebar = () => {
       
       {/* Buttons - positioned at absolute bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-8 pt-0">
-        <div className="border-t border-purple-200 pt-4 w-full">
+        <div className="border-t border-blue-200 pt-4 w-full">
           <div className="space-y-3">
           {buttonConfigs.map((config) => {
             const Icon = config.icon;
@@ -203,8 +203,8 @@ const ProfileSidebar = () => {
                 onMouseLeave={() => handleMouseLeave(config.id)}
                 className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg transition text-sm font-medium relative overflow-hidden ${
                   config.id === 'download' || config.id === 'work' 
-                    ? 'bg-purple-100 text-purple-800 hover:bg-purple-200 border border-purple-300' 
-                    : 'bg-purple-800 text-white hover:bg-purple-900'
+                    ? 'bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300' 
+                    : 'bg-blue-800 text-white hover:bg-blue-900'
                 }`}
               >
                 <span className={`absolute inset-0 flex items-center justify-center gap-2 transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>

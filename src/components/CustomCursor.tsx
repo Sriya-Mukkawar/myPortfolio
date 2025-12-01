@@ -56,8 +56,8 @@ const CustomCursor = () => {
             className="absolute inset-0 rounded-full blur-md opacity-30"
             style={{
               background: isHovering 
-                ? 'radial-gradient(circle, #a855f7, transparent)' 
-                : 'radial-gradient(circle, #9333ea, transparent)',
+                ? 'radial-gradient(circle, #1e40af, transparent)' 
+                : 'radial-gradient(circle, #1e3a8a, transparent)',
             }}
           />
           
@@ -65,8 +65,8 @@ const CustomCursor = () => {
           <motion.div
             className="w-8 h-8 rounded-full border-2 flex items-center justify-center"
             style={{
-              borderColor: isHovering ? '#a855f7' : '#9333ea',
-              backgroundColor: isHovering ? 'rgba(168, 85, 247, 0.1)' : 'rgba(147, 51, 234, 0.05)',
+              borderColor: isHovering ? '#1e40af' : '#1e3a8a',
+              backgroundColor: isHovering ? 'rgba(30, 64, 175, 0.1)' : 'rgba(30, 58, 138, 0.05)',
             }}
             animate={{
               scale: isHovering ? 1.5 : 1,
@@ -75,7 +75,7 @@ const CustomCursor = () => {
             {cursorText && (
               <motion.span
                 className="text-xs font-mono font-bold"
-                style={{ color: '#9333ea' }}
+                style={{ color: '#1e3a8a' }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
@@ -86,7 +86,7 @@ const CustomCursor = () => {
             {/* Typing cursor indicator */}
             {!cursorText && (
               <motion.div
-                className="w-1 h-4 bg-purple-600"
+                className="w-1 h-4 bg-blue-600"
                 animate={{
                   opacity: [1, 0, 1],
                 }}
@@ -117,7 +117,7 @@ const CustomCursor = () => {
         <div
           className="w-2 h-2 rounded-full opacity-50"
           style={{
-            background: 'radial-gradient(circle, #c084fc, transparent)',
+            background: 'radial-gradient(circle, #2563eb, transparent)',
           }}
         />
       </motion.div>

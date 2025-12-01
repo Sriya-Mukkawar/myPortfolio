@@ -17,21 +17,16 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div>
+    <div id="career-journey">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-left mb-8"
         >
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px bg-purple-300 flex-1 max-w-32"></div>
-            <h2 className="text-4xl md:text-5xl font-bold text-black">Since</h2>
-            <div className="h-px bg-purple-300 flex-1 max-w-32"></div>
-          </div>
-          <div className="text-6xl md:text-8xl font-bold text-black">2023</div>
+          <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">Career Journey</h2>
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-8">
@@ -42,7 +37,7 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="rounded-xl p-6 border border-purple-200 hover:border-purple-300 transition-colors bg-purple-50"
+              className="rounded-xl p-6 border border-blue-200 hover:border-blue-300 transition-colors bg-blue-50"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
@@ -50,7 +45,7 @@ const Experience = () => {
                   <h3 className="text-2xl font-bold text-black mb-1">{exp.role}</h3>
                   <p className="text-lg text-gray-700">{exp.company}</p>
                 </div>
-                <span className="px-4 py-2 rounded-full text-sm font-medium bg-purple-200 text-purple-800 border border-purple-300">
+                <span className="px-4 py-2 rounded-full text-sm font-medium bg-blue-200 text-blue-800 border border-blue-300">
                   {exp.type}
                 </span>
               </div>

@@ -128,13 +128,13 @@ const TerminalComponent = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 z-[101] bg-gray-900 border-t-2 border-purple-500"
+            className="fixed bottom-0 left-0 right-0 z-[101] bg-gray-900 border-t-2 border-blue-500"
             style={{ height: '50vh', maxHeight: '500px' }}
           >
             {/* Terminal Header */}
             <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-purple-400" />
+                <Terminal className="w-4 h-4 text-blue-400" />
                 <span className="text-white text-sm font-mono">Terminal</span>
               </div>
               <button
@@ -150,18 +150,18 @@ const TerminalComponent = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               ref={terminalRef}
               className="h-[calc(100%-120px)] overflow-y-auto p-4 font-mono text-sm"
             >
-              <div className="text-purple-400 mb-2">
+              <div className="text-blue-400 mb-2">
                 Welcome to the terminal. Type 'help' for available commands.
               </div>
               
               {commandHistory.map((item, index) => (
                 <div key={index} className="mb-2">
                   <div className="text-green-400">
-                    <span className="text-purple-400">~</span>
+                    <span className="text-blue-400">~</span>
                     <span className="text-gray-400">@</span>
                     <span className="text-white">portfolio</span>
                     <span className="text-gray-500">:</span>
-                    <span className="text-purple-400">{currentPath}</span>
+                    <span className="text-blue-400">{currentPath}</span>
                     <span className="text-gray-500">$</span>
                     <span className="text-white ml-1">{item.command}</span>
                   </div>
@@ -174,11 +174,11 @@ const TerminalComponent = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               {/* Current Input Line */}
               <form onSubmit={handleSubmit} className="flex items-center">
                 <span className="text-green-400">
-                  <span className="text-purple-400">~</span>
+                  <span className="text-blue-400">~</span>
                   <span className="text-gray-400">@</span>
                   <span className="text-white">portfolio</span>
                   <span className="text-gray-500">:</span>
-                  <span className="text-purple-400">{currentPath}</span>
+                  <span className="text-blue-400">{currentPath}</span>
                   <span className="text-gray-500">$</span>
                 </span>
                 <input

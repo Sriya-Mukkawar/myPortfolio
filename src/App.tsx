@@ -5,8 +5,6 @@ import ProfileSidebar from './components/ProfileSidebar';
 import MainContent from './components/MainContent';
 import IndexSidebar from './components/IndexSidebar';
 import BottomBar from './components/BottomBar';
-import CustomCursor from './components/CustomCursor';
-
 function AppContent() {
   const { activeTab } = useTab();
 
@@ -33,11 +31,10 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      <CustomCursor />
       <Navbar />
-      <div className="flex pt-8 h-[calc(100vh-2rem)]">
+      <div className="flex flex-col lg:flex-row pt-12 lg:pt-8 h-[calc(100vh-3rem)] lg:h-[calc(100vh-2rem)]">
         <ProfileSidebar />
-        <div className="flex-1 min-w-0 overflow-y-auto pb-8 bg-white">
+        <div className="flex-1 min-w-0 overflow-y-auto pb-20 lg:pb-8 bg-white">
           <MainContent />
         </div>
         {activeTab === 'sriya.info' && <IndexSidebar />}

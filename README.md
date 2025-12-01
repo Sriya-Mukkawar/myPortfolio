@@ -26,6 +26,26 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 npm install
 ```
 
+2. Set up EmailJS for contact form (optional but recommended):
+   - Create a free account at [EmailJS](https://www.emailjs.com/)
+   - Create an email service (Gmail, Outlook, etc.)
+   - Create an email template with these variables:
+     - `{{from_name}}` - Sender's full name
+     - `{{from_email}}` - Sender's email
+     - `{{subject}}` - Message subject
+     - `{{message}}` - Message content
+   - Copy your Service ID, Template ID, and Public Key
+   - Create a `.env` file in the root directory:
+   ```bash
+   cp .env.example .env
+   ```
+   - Add your EmailJS credentials to `.env`:
+   ```
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
 ## 🏃 Development
 
 Start the development server:

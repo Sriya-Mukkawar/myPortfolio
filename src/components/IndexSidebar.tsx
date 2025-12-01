@@ -2,18 +2,14 @@ import { motion } from 'framer-motion';
 
 const IndexSidebar = () => {
   const navItems = [
-    'Work',
+    'Career Journey',
     'About me',
-    'What I do',
     'Tech stack',
-    'Awards',
-    "Client's word",
-    'Blog',
     'Contact me',
   ];
 
   return (
-    <aside className="w-64 flex-shrink-0 border-l border-purple-200 p-8 h-full overflow-hidden bg-white">
+    <aside className="hidden xl:block w-64 flex-shrink-0 border-l border-blue-200 p-8 h-full overflow-hidden bg-white">
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -26,7 +22,7 @@ const IndexSidebar = () => {
             <a
               key={index}
               href={`#${item.toLowerCase().replace(/\s+/g, '-').replace("'", '')}`}
-              className="block text-black hover:text-purple-600 transition text-sm font-mono hover:translate-x-1"
+              className="block text-black hover:text-blue-600 transition text-sm font-mono hover:translate-x-1"
             >
               {item}
             </a>
